@@ -1,2 +1,7 @@
 [Docker]<https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce>
+  - Dockerfile : always capital D
+  - commands in Dockerfile are always all-caps
+  - docker build . // builds the container with the Dockerfile that's here
   
+[Alpine Linux]<https://alpinelinux.org/>
+  - light weight distro
