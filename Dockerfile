@@ -1,3 +1,4 @@
 FROM alpine
 
-CMD echo 'hello world'
+COPY test.sh /test.sh
+CMD /test.sh
