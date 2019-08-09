@@ -2,6 +2,21 @@
   - Dockerfile : always capital D
   - commands in Dockerfile are always all-caps
   - docker build . // builds the container with the Dockerfile that's here
-  
+
 [Alpine Linux]<https://alpinelinux.org/>
   - light weight distro
+
+[minikube]<https://kubernetes.io/docs/tasks/tools/install-minikube/>
+  - sudo snap install kubectl --classic
+  - sudo snap install minikube // this causes problems
+  - curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube // this does work, but now the system keeps looking for it in /snap/bin/minikube
+  - sudo install minikube /usr/local/bin // this suggestion doesn't help at all
+  - ./minikube start
+  - kubectl run test-minikube --image=gcr.io/google-containers/echoserver:1.4 --port=8080
+  - kubectl expose deployment test-minikube --type=NodePort
+  - kubectl get pods
+  - ./minikube service test-minikube --url
+  - curl $(./minikube service test-minikube --url)
+  - kubectl delete deployment test-minikube
+  - ./minikube stop
